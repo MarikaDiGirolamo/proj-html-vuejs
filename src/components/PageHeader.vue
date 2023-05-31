@@ -1,24 +1,25 @@
 <script>
-
+import JumboSearch from './JumboSearch.vue';
 export default{
-    name: 'PageHeader',
-    data(){
-        return{
-
-        }
+    name: "PageHeader",
+    components:{
+        JumboSearch
     },
-    methods:{
+    data() {
+        return {};
+    },
+    methods: {
 
     },
-    mounted(){
-
-    }
+    mounted() {
+    },
 }
 
 </script>
 
 <template>
-
+    <!-- Creare un  sottocomponente per la navbar e jumbotron da importare dentro l'header -->
+    <JumboSearch />
 </template>
 
 <style scoped lang="scss">

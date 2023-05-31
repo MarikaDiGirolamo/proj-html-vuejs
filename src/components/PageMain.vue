@@ -1,16 +1,24 @@
 <script>
-
-export default{
+import PageData from './PageData.vue';
+import CallToAction from './CallToAction.vue';
+import PageArticles from './PageArticles.vue';
+export default {
     name: 'PageMain',
-    data(){
-        return{
+    components: {
+        PageData,
+        CallToAction,
+        PageArticles,
+    },
+
+    data() {
+        return {
 
         }
     },
-    methods:{
+    methods: {
 
     },
-    mounted(){
+    mounted() {
 
     }
 }
@@ -18,8 +26,15 @@ export default{
 </script>
 
 <template>
-
+    <main>
+        <!-- Creare 3 sottocomponenti in cui dividere il main -->
+        <!-- Page Datas (Every Moment Counts) -->
+        <PageData />
+        <!-- Page Call-to-Action (Our Values) -->
+        <CallToAction />
+        <!-- Page Articles (Recent Causes + Latest Articles) -->
+        <PageArticles />
+    </main>
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>
