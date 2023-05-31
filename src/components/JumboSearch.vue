@@ -2,7 +2,9 @@
 export default {
   name: "JumboSearch",
   data() {
-    return {};
+    return {
+      image: '../src/assets/Logo_1'
+    };
   },
   methods: {},
   mounted() { },
@@ -15,7 +17,7 @@ export default {
     <!-- Creare NavBar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
+        <img :src="image" alt="Logo">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -47,16 +49,33 @@ export default {
         </div>
       </div>
     </nav>
+    <!-- Fine navbar -->
     <!-- Creare Jumbotron -->
+    <div class="container jumbo">
+      <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">MAKE A DIFFERENCE</h1>
+          <p>As long as poverty, injustice & inequality persist, none of us can truly rest</p>
+          <div class="jumbo-btn">
+            <button class="btn btn-primary btn-lg" type="button">Our Mission</button>
+            <button class="btn btn-primary btn-lg" type="button">Our Mission</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
 <style scoped lang="scss">
+@use '../styles/partials/_mixins.scss' as *;
+
 header {
-  background-color: aqua;
+  background-color: aquamarine;
+  // background-image: url(../assets/JumboTron.jpeg);
   border: 1px dashed black;
 
   .navbar {
+    border: 1px dashed black;
     background-color: red;
     height: 100px;
     padding: 1rem;
@@ -69,6 +88,20 @@ header {
 
   .btn {
     margin: 0.5;
+  }
+
+  .jumbo {
+    //@include flex(justify,text, align);
+    border: 1px dashed black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .jumbo-btn {
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 </style>
