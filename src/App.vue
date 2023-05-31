@@ -3,17 +3,17 @@ import PageHeader from './components/PageHeader.vue';
 import PageMain from './components/PageMain.vue';
 import PageFooter from './components/PageFooter.vue';
 
-import {store} from './data/store'
+import { store } from './data/store'
 
-export default{
+export default {
   nome: "App.vue",
   components: {
     PageHeader,
     PageMain,
     PageFooter
   },
-  data(){
-    return{
+  data() {
+    return {
       store
     }
 
@@ -21,7 +21,7 @@ export default{
   methods: {
 
   },
-  mounted(){
+  mounted() {
 
   }
 }
@@ -34,5 +34,5 @@ export default{
 </template>
 
 <style scoped lang="scss">
-
+@use './styles/generic.scss' as *;
 </style>
