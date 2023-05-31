@@ -1,0 +1,12 @@
+@mixin flex($justify: center, $align: center, $text: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    text-align: $text;
+}
+
+@mixin noFlex($justify: center, $align: center, $text: center) {
+    justify-content: $justify;
+    align-items: $align;
+    text-align: $text;
+}
