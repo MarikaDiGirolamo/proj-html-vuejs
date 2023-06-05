@@ -2,6 +2,26 @@ import { reactive } from 'vue';
 
 export const store = reactive({
 
+
+    // navLinks: [
+    //     "Home",
+    //     "Mission",
+    //     "Causes",
+    //     "Journal"
+
+    // ],
+
+    drops: [
+        "First Choise",
+        "Second Choise",
+        "Third Choise",
+    ],
+
+    buttons: [
+        "Our Mission",
+        "Donate"
+    ],
+
     cards: [
         {
             "image": "IMG_1.jpeg",

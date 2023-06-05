@@ -20,12 +20,9 @@ export default {
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <img id="logo" src="../assets/Logo_1.png" alt="Logo">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
+            <!-- <li class="navbar-nav" v-for="navLink in store.navLinks" :key="navLink">{{ navLink }}</li> -->
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
@@ -38,16 +35,14 @@ export default {
                 Causes
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#" v-for="drop in store.drops" :key="drop">{{ drop }}</a></li>
               </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Journal</a>
             </li>
           </ul>
-          <button type="button" class="btn btn-outline-warning">Donate</button>
+          <button type="button" class="btn">Donate</button>
         </div>
       </div>
     </nav>
@@ -59,8 +54,9 @@ export default {
           <h1 class="display-5 fw-bold">MAKE A DIFFERENCE</h1>
           <p>As long as poverty, injustice & inequality persist, none of us can truly rest</p>
           <div class="jumbo-btn">
-            <button class="btn btn-lg" type="button">Our Mission</button>
-            <button class="btn btn-lg" type="button">Donate Now</button>
+            <button class="btn btn-lg" type="button" v-for="button in store.buttons" :key="button">{{ button }}</button>
+            <!-- <button class="btn btn-lg" type="button">Our Mission</button> -->
+            <!-- <button class="btn btn-lg" type="button">Donate Now</button> -->
           </div>
         </div>
       </div>
@@ -94,14 +90,11 @@ header {
 
   a {
     color: $supportColor;
+    margin: .5rem;
 
     &:hover {
       color: $newThemeColor;
     }
-
-    // &:active {
-    //   color: $newThemeColor;
-    // }
   }
 
   .dropdown-menu a {
@@ -126,6 +119,13 @@ header {
       outline-color: $newThemeColor;
     }
 
+    &:active {
+      background-color: transparent;
+      color: $newThemeColor;
+      box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+      transform: translateY(4px);
+    }
+
   }
 
   .jumbo {
@@ -143,7 +143,6 @@ header {
     .jumbo-btn {
       display: flex;
       justify-content: space-evenly;
-      // @include button-outline-variant
 
     }
   }
