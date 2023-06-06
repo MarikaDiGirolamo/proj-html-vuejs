@@ -42,7 +42,7 @@ export default {
               <a class="nav-link" href="#">Journal</a>
             </li>
           </ul>
-          <button type="button" class="btn">Donate</button>
+          <button type="button" class="btn-nav">Donate</button>
         </div>
       </div>
     </nav>
@@ -164,6 +164,35 @@ header {
     }
   }
 
+  .btn-nav {
+    width: 150px;
+    font-size: 1rem;
+    padding: 0.5rem;
+    background: transparent;
+    color: $newThemeColor;
+    border: 1px solid $newThemeColor;
+    border-radius: 10px;
+    margin: 3rem;
+    background: transparent;
+
+
+    &:hover {
+      background-color: $newThemeColor;
+      color: $linkColor;
+      outline-color: $newThemeColor;
+      transform: scale(1.2);
+      transition: 0.3s;
+    }
+
+    &:active {
+      background-color: transparent;
+      color: $newThemeColor;
+      box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+      transform: translateY(4px);
+    }
+
+  }
+
   .dropdown-menu a {
     color: $textColor;
   }
@@ -179,7 +208,7 @@ header {
     background: transparent;
     color: $newThemeColor;
     border: 1px solid $newThemeColor;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 3rem;
     background: transparent;
 
