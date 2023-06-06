@@ -35,6 +35,13 @@ export const store = reactive({
     //     { id: "fa-regular fa-earth-americas", name: "Active Project" },
     //     { id: "fa-solid fa-dollar-sign", name: "Donated" }
     // ],
+    btns: [
+        "Learn More",
+    ],
+    footer_btns: [
+        "Voluteer",
+        "Donate"
+    ],
 
     articleArr: [
         {

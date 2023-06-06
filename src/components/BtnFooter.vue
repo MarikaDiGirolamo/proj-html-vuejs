@@ -1,5 +1,6 @@
 <script>
 import LinkFooter from './LinkFooter.vue';
+import { store } from '../data/store';
 export default {
     name: "BtnFooter",
     components: {
@@ -7,7 +8,7 @@ export default {
     },
     data() {
         return {
-
+            store
         }
     },
     methods: {
@@ -32,8 +33,10 @@ export default {
                             much to change a life. Get in touche today anda start making the difference</p>
                     </div>
                     <div class="footer-btn">
-                        <button class="btn" type="button">Volunteer</button>
-                        <button class="btn" type="button">Donate Now</button>
+                        <button class="btn btn-lg" type="button" v-for="f_btn in store.footer_btns" :key="f_btn">{{ f_btn
+                        }}</button>
+                        <!-- <button class="btn" type="button">Volunteer</button>
+                                        <button class="btn" type="button">Donate Now</button> -->
                     </div>
                 </div>
             </div>
@@ -97,18 +100,28 @@ footer {
 
 
     .btn {
+        background: transparent;
         color: $newThemeColor;
-        border: 1px solid #A7BED3;
+        border: 1px solid $newThemeColor;
         margin: 3rem;
         background: transparent;
 
 
         &:hover {
-            background: transparent;
-            color: $newThemeColor;
+            background-color: $newThemeColor;
+            color: $linkColor;
             outline-color: $newThemeColor;
+            transform: scale(1.2);
+            transition: 0.3s;
         }
-    }
 
+        &:active {
+            background-color: transparent;
+            color: $newThemeColor;
+            box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+            transform: translateY(4px);
+        }
+
+    }
 }
 </style>

@@ -89,4 +89,20 @@ i {
 span {
     color: $newThemeColor;
 }
+
+.nav-link {
+    &:hover {
+        color: $newThemeColor;
+        outline-color: $newThemeColor;
+        transform: scale(1.3);
+        transition: 0.3s;
+    }
+
+    &:active {
+        background-color: transparent;
+        color: $newThemeColor;
+        box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+        transform: translateY(4px);
+    }
+}
 </style>

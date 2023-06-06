@@ -18,7 +18,7 @@ export default {
     <div class="container-fluid">
         <div class="container">
             <div class="article-title">
-            <h2>LATEST ARTICLES</h2>
+            <h2 id="articles">LATEST ARTICLES</h2>
             <p class="sub-title">Together we all make the difference</p>
 
             <div class="row">
@@ -34,16 +34,16 @@ export default {
                     </div>
 
                     <!-- <div class="card mb-3" v-for="article in store.articles" :key="article">
-                                                                                            <div class="row g-0">
-                                                                                                <div class="col-md-4">
-                                                                                                    <img :src="`src/assets/${article.image}`" class="img-fluid rounded-start">
-                                                                                                </div>
-                                                                                                <div class="card-body">
-                                                                                                    <h5>{{ article.title }}</h5>
-                                                                                                    <p>{{ article.text }}</p>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div> -->
+                                                                                                        <div class="row g-0">
+                                                                                                            <div class="col-md-4">
+                                                                                                                <img :src="`src/assets/${article.image}`" class="img-fluid rounded-start">
+                                                                                                            </div>
+                                                                                                            <div class="card-body">
+                                                                                                                <h5>{{ article.title }}</h5>
+                                                                                                                <p>{{ article.text }}</p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div> -->
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -95,7 +95,7 @@ export default {
                 </div>
             </div>
             <div class="link">
-                <h3>VIEW ALL OUR ARTICLES</h3>
+                <a href="#articles"> VIEW ALL OUR ARTICLES</a>
             </div>
         </div>
     </div>
@@ -182,6 +182,17 @@ h3 {
     color: $supportColor;
     padding: 0.5rem;
     margin: 0;
-    @include flex(center, center, center)
+    @include flex(center, center, center);
+
+    a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $supportColor;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+    }
 }
 </style>

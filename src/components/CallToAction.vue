@@ -28,6 +28,8 @@ export default {
                         </div>
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.description }}</p>
+                        <button class="btn btn-lg" type="button" v-for="btn in store.btns" :key="btn">{{ btn
+                        }}</button>
                     </article>
                 </div>
             </div>
@@ -49,7 +51,7 @@ export default {
         </div>
     </div>
     <div class="container-fluid links">
-        <h2 class="link"> <a href="#causes-articles">VIEW ALL OUR CAUSES</a></h2>
+        <a href="#causes-articles">VIEW ALL OUR CAUSES</a>
     </div>
 </template>
 
@@ -113,10 +115,28 @@ p {
 }
 
 .btn {
+    background: transparent;
     color: $newThemeColor;
-    border: 1px solid #A7BED3;
+    border: 1px solid $newThemeColor;
     margin: 3rem;
     background: transparent;
+
+
+    &:hover {
+        background-color: $newThemeColor;
+        color: $linkColor;
+        outline-color: $newThemeColor;
+        transform: scale(1.2);
+        transition: 0.3s;
+    }
+
+    &:active {
+        background-color: transparent;
+        color: $newThemeColor;
+        box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+        transform: translateY(4px);
+    }
+
 }
 
 .call-icon {
@@ -177,8 +197,15 @@ p {
     @include flex(center, center, center);
 
     a {
+        font-size: 1.5rem;
         text-decoration: none;
         color: $supportColor;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
     }
+
 }
 </style>

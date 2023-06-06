@@ -101,29 +101,46 @@ header {
 
   .prebuilts,
   .on-sale {
+    padding: 0.4rem;
     width: 70px;
     height: 70px;
     background-color: $supportColor;
-    font-size: 10px;
-    padding: 1rem;
+    font-size: 15px;
     flex-wrap: wrap;
     border-radius: 15px;
     @include flex(center, center, center);
 
-    .on-sale span {
-      font-size: 1rem;
-      font-weight: bolder;
+    &:hover {
+      // background-color: $newThemeColor;
+      color: $textColor;
+      outline-color: $newThemeColor;
+      transform: scale(1.2);
+      transition: 0.3s;
     }
+
+    &:active {
+      background-color: transparent;
+      color: $newThemeColor;
+      box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+      transform: translateY(4px);
+    }
+
+  }
+
+  .on-sale span {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    color: green;
   }
 
 
-  .on-side i,
-  p {
+  .on-side i {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 20px;
     color: green;
     padding: 0.1rem;
   }
+
 
   .navbar {
     height: 80px;
@@ -156,16 +173,21 @@ header {
 
 
   .btn {
+    background: transparent;
     color: $newThemeColor;
-    border: 1px solid #A7BED3;
+    border: 1px solid $newThemeColor;
+    border-radius: 20px;
     margin: 3rem;
+    padding: 1rem;
     background: transparent;
 
 
     &:hover {
-      background: transparent;
-      color: $newThemeColor;
+      background-color: $newThemeColor;
+      color: $linkColor;
       outline-color: $newThemeColor;
+      transform: scale(1.2);
+      transition: 0.3s;
     }
 
     &:active {
@@ -182,19 +204,17 @@ header {
   }
 
   .jumbo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    @include flex(center, center, center);
 
 
     .title {
       font-size: 5rem;
+      font-weight: bold;
     }
 
     .subtitle {
-      font-size: 1rem;
-      font-weight: lighter;
+      font-size: 1.5rem;
+      font-weight: light;
     }
 
     .title,

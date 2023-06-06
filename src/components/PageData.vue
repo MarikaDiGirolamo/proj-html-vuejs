@@ -27,12 +27,15 @@ export default {
                 <div class="col-4 icon-data">
                     <ul class="icon-list">
                         <!-- <li v-for="icon in store.icon_lists" :key="icon.id">{{ icon.id }}</li> -->
-                        <li><i class="fa-regular fa-heart" style="color: #f0f2f4;"></i> 2032</li>
-                        <p class="icon-text">Volunteers WorldWide</p>
-                        <li><i class="fa-regular fa-earth-americas"></i> 132</li>
-                        <p class="icon-text">Active Projects</p>
-                        <li><i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i> 3.8M</li>
-                        <p class="icon-text">Donated</p>
+                        <li><i class="fa-regular fa-heart"></i><span> 2032</span>
+                            <p class="icon-text">Volunteers WorldWide</p>
+                        </li>
+                        <li><i class="fa-solid fa-earth-americas"></i><span> 132</span>
+                            <p class="icon-text">Active Projects</p>
+                        </li>
+                        <li><i class="fa-solid fa-dollar-sign"></i><span> 3.8M</span>
+                            <p class="icon-text">Donated</p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -73,16 +76,22 @@ h2:after {
 }
 
 .btn {
+    background: transparent;
     color: $newThemeColor;
-    border: 1px solid #A7BED3;
+    border: 1px solid $newThemeColor;
+    border-radius: 15px;
+    margin: 3rem;
     padding: 1rem;
+    font-size: 20px;
     background: transparent;
 
 
     &:hover {
-        background: transparent;
-        color: $newThemeColor;
+        background-color: $newThemeColor;
+        color: $linkColor;
         outline-color: $newThemeColor;
+        transform: scale(1.2);
+        transition: 0.3s;
     }
 
     &:active {
@@ -95,17 +104,19 @@ h2:after {
 }
 
 .icon-data {
-    background: url(../assets/Planisfero\ 2.jpg);
+    background: url(../assets/planisfero_bn.jpg) center;
     background-color: $dataColor;
     padding: 2rem;
-    border: 1px dashed $textColor;
     @include flex(center, center, center)
 }
 
-.icon-data li {
+.icon-data li,
+i {
     list-style: none;
     font-size: 2rem;
-    color: $supportColor;
+    color: $textColor;
+    line-height: 4rem;
+
 }
 
 .icon-list {
@@ -114,7 +125,8 @@ h2:after {
     flex-direction: column;
 
     .icon-text {
-        color: $supportColor;
+        color: $textColor;
+        font-size: 1.5rem;
     }
 }
 </style>
