@@ -70,10 +70,17 @@ export default {
 
     .call-title {
         // width: 400px;
-        color: white;
-        padding: 2rem;
+        color: $countsColor;
+        // padding: 2rem;
 
         @include noFlex(center, center, center);
+
+        p {
+            font-size: 1.5rem;
+            font-weight: lighter;
+            color: $countsColor;
+            text-align: center;
+        }
 
         h2 {
             font-size: 2.5rem;
@@ -86,7 +93,7 @@ export default {
         h2:after {
             content: ' ';
             border: 1px solid $newThemeColor;
-            width: 20%;
+            width: 15%;
             border-radius: 4px;
             margin: 2rem 0;
             -webkit-border-radius: 4px;
@@ -111,6 +118,7 @@ export default {
 .call-text i,
 h3,
 p {
+    line-height: 2rem;
     padding-bottom: 1.5rem;
 }
 
@@ -119,6 +127,8 @@ p {
     color: $newThemeColor;
     border: 1px solid $newThemeColor;
     margin: 3rem;
+    width: 200px;
+    font-size: 1.5rem;
     background: transparent;
 
 
@@ -179,6 +189,8 @@ p {
         }
 
         p {
+            font-size: 1.5rem;
+            font-weight: lighter;
             color: $paragraphColor;
             text-align: center;
         }

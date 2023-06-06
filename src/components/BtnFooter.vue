@@ -36,7 +36,7 @@ export default {
                         <button class="btn btn-lg" type="button" v-for="f_btn in store.footer_btns" :key="f_btn">{{ f_btn
                         }}</button>
                         <!-- <button class="btn" type="button">Volunteer</button>
-                                        <button class="btn" type="button">Donate Now</button> -->
+                                            <button class="btn" type="button">Donate Now</button> -->
                     </div>
                 </div>
             </div>
@@ -100,9 +100,12 @@ footer {
 
 
     .btn {
+        width: 200px;
+        font-size: 1.5rem;
         background: transparent;
         color: $newThemeColor;
         border: 1px solid $newThemeColor;
+        border-radius: 20px;
         margin: 3rem;
         background: transparent;
 

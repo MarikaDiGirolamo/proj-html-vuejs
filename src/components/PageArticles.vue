@@ -34,16 +34,16 @@ export default {
                     </div>
 
                     <!-- <div class="card mb-3" v-for="article in store.articles" :key="article">
-                                                                                                        <div class="row g-0">
-                                                                                                            <div class="col-md-4">
-                                                                                                                <img :src="`src/assets/${article.image}`" class="img-fluid rounded-start">
-                                                                                                            </div>
-                                                                                                            <div class="card-body">
-                                                                                                                <h5>{{ article.title }}</h5>
-                                                                                                                <p>{{ article.text }}</p>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </div> -->
+                                                                                                                    <div class="row g-0">
+                                                                                                                        <div class="col-md-4">
+                                                                                                                            <img :src="`src/assets/${article.image}`" class="img-fluid rounded-start">
+                                                                                                                        </div>
+                                                                                                                        <div class="card-body">
+                                                                                                                            <h5>{{ article.title }}</h5>
+                                                                                                                            <p>{{ article.text }}</p>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div> -->
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -117,6 +117,10 @@ export default {
 
     .sub-title {
         padding: 0 0 3rem;
+        font-size: 1.5rem;
+        font-weight: lighter;
+        color: $paragraphColor;
+        text-align: center;
     }
 
     @include noFlex(center, center, center)
@@ -158,6 +162,7 @@ h3 {
     }
 
     p {
+
         color: $paragraphColor;
     }
 

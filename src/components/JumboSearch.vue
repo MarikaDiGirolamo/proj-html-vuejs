@@ -61,7 +61,7 @@ export default {
         </div>
         <div class="jumbo-container container py-5">
           <h1 class="display-5 fw-bold title">MAKE A DIFFERENCE</h1>
-          <p class="subtitle">As long as poverty, injustice & inequality persist, none of us can truly rest</p>
+          <p class="subtitle">As long as poverty, injustice & inequality persist, none of us can truly rest.</p>
           <div class="jumbo-btn">
             <button class="btn btn-lg" type="button" v-for="button in store.buttons" :key="button">{{ button }}</button>
             <!-- <button class="btn btn-lg" type="button">Our Mission</button> -->
@@ -96,7 +96,7 @@ header {
     right: 0;
     padding: 1rem;
     margin-bottom: 2rem;
-    justify-content: space-around;
+
   }
 
   .prebuilts,
@@ -108,6 +108,7 @@ header {
     font-size: 15px;
     flex-wrap: wrap;
     border-radius: 15px;
+    margin-top: 1rem;
     @include flex(center, center, center);
 
     &:hover {
@@ -145,7 +146,7 @@ header {
   .navbar {
     height: 80px;
     padding: 1rem;
-    margin: 0 80px;
+    margin: 0 20px;
 
     #logo {
       height: 35px;
@@ -173,12 +174,13 @@ header {
 
 
   .btn {
+    width: 200px;
+    font-size: 1.5rem;
     background: transparent;
     color: $newThemeColor;
     border: 1px solid $newThemeColor;
     border-radius: 20px;
     margin: 3rem;
-    padding: 1rem;
     background: transparent;
 
 

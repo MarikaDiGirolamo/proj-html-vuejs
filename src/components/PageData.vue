@@ -80,9 +80,9 @@ h2:after {
     color: $newThemeColor;
     border: 1px solid $newThemeColor;
     border-radius: 15px;
-    margin: 3rem;
-    padding: 1rem;
-    font-size: 20px;
+    margin-top: 1.5rem;
+    width: 200px;
+    font-size: 1.5rem;
     background: transparent;
 
 

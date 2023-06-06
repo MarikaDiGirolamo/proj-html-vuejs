@@ -91,6 +91,7 @@ span {
 }
 
 .nav-link {
+
     &:hover {
         color: $newThemeColor;
         outline-color: $newThemeColor;
