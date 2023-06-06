@@ -1,9 +1,10 @@
 <script>
+import { store } from '../data/store';
 export default {
     name: "PageData",
     data() {
         return {
-
+            store
         };
     },
     methods: {},
@@ -17,28 +18,18 @@ export default {
             <div class="row data">
                 <div class="col-8 text-data">
                     <div class="title">
-                        <h2 class="data-title border-bottom">EVERY MOMENT COUNTS</h2>
+                        <h2 class="data-title">EVERY MOMENT COUNTS</h2>
                     </div>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde rem aperiam fugiat mollitia,
-                        deleniti
-                        autem exercitationem facilis, sunt minima amet itaque aliquam in velit perspiciatis magnam quam
-                        dolor voluptatibus doloribus.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat quas nostrum sit culpa velit
-                        minus
-                        saepe amet neque distinctio laborum, exercitationem eveniet voluptates nihil molestias
-                        architecto
-                        veritatis dolor necessitatibus ea!</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore nesciunt fugit corrupti sed enim
-                        accusantium at itaque accusamus inventore excepturi voluptate placeat ratione vel, rerum, ipsum
-                        incidunt omnis impedit voluptas.</p>
+                    <p v-for="data in store.p_datas" :key="data">{{ data }}</p>
 
                     <button class="btn" type="button">Our Mission</button>
                 </div>
                 <div class="col-4 icon-data">
                     <ul class="icon-list">
+                        <!-- <li v-for="icon in store.icon_lists" :key="icon.id">{{ icon.id }}</li> -->
                         <li><i class="fa-regular fa-heart" style="color: #f0f2f4;"></i> 2032</li>
                         <p class="icon-text">Volunteers WorldWide</p>
-                        <li><i class="fa-regular fa-earth-americas" style="color: #ffffff;"></i> 132</li>
+                        <li><i class="fa-regular fa-earth-americas"></i> 132</li>
                         <p class="icon-text">Active Projects</p>
                         <li><i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i> 3.8M</li>
                         <p class="icon-text">Donated</p>
@@ -63,19 +54,44 @@ export default {
     }
 }
 
-.title {
-    width: 400px;
-    size: 3px;
-    border-bottom: 2px solid $newThemeColor;
+h2 {
+    font-size: 2.5rem;
+}
+
+h2:after {
+    content: ' ';
+    display: block;
+    border: 1px solid $newThemeColor;
+    width: 20%;
+    border-radius: 4px;
+    margin: 2rem 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
 .btn {
     color: $newThemeColor;
     border: 1px solid #A7BED3;
+    padding: 1rem;
     background: transparent;
-    // &:hover {
-    //     color: $supportColor;
-    // }
+
+
+    &:hover {
+        background: transparent;
+        color: $newThemeColor;
+        outline-color: $newThemeColor;
+    }
+
+    &:active {
+        background-color: transparent;
+        color: $newThemeColor;
+        box-shadow: 3px 6px 8px 1px rgba(167, 190, 217, 0.76);
+        transform: translateY(4px);
+    }
+
 }
 
 .icon-data {

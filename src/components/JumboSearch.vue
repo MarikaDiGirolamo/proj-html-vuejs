@@ -50,9 +50,18 @@ export default {
     <!-- Creare Jumbotron -->
     <div class="container-fluid jumbo">
       <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">MAKE A DIFFERENCE</h1>
-          <p>As long as poverty, injustice & inequality persist, none of us can truly rest</p>
+        <div class="on-side">
+          <div>
+            <button class="prebuilts"><i class="fa-solid fa-folder"></i>Prebuilds</button>
+          </div>
+          <div>
+            <button class="on-sale"><i class="fa-solid fa-dollar-sign"></i><span>45</span> On
+              Sale</button>
+          </div>
+        </div>
+        <div class="jumbo-container container py-5">
+          <h1 class="display-5 fw-bold title">MAKE A DIFFERENCE</h1>
+          <p class="subtitle">As long as poverty, injustice & inequality persist, none of us can truly rest</p>
           <div class="jumbo-btn">
             <button class="btn btn-lg" type="button" v-for="button in store.buttons" :key="button">{{ button }}</button>
             <!-- <button class="btn btn-lg" type="button">Our Mission</button> -->
@@ -74,7 +83,47 @@ header {
   height: 100%;
   background: url(../assets/JumboTron.jpeg) no-repeat center top;
 
+  .container-fluid {
+    position: relative;
+  }
 
+  .on-side {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+  }
+
+  .prebuilts,
+  .on-sale {
+    width: 70px;
+    height: 70px;
+    background-color: $supportColor;
+    font-size: 10px;
+    padding: 1rem;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    @include flex(center, center, center);
+
+    .on-sale span {
+      font-size: 1rem;
+      font-weight: bolder;
+    }
+  }
+
+
+  .on-side i,
+  p {
+    font-weight: bold;
+    font-size: 12px;
+    color: green;
+    padding: 0.1rem;
+  }
 
   .navbar {
     height: 80px;
@@ -128,14 +177,28 @@ header {
 
   }
 
+  .jumbo-container {
+    margin-top: 8rem;
+  }
+
   .jumbo {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    h1,
-    p {
+
+    .title {
+      font-size: 5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: lighter;
+    }
+
+    .title,
+    .subtitle {
       color: $supportColor;
       padding: 1rem;
     }

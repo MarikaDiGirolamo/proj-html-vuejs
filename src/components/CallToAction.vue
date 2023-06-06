@@ -4,7 +4,7 @@ export default {
     name: "CallToAction",
     data() {
         return {
-            store
+            store,
         };
     },
     methods: {},
@@ -14,56 +14,31 @@ export default {
 
 <template>
     <div class="container-fluid call-container">
-        <div class="call-title">
+        <div class="call-title p-3 m-5">
             <h2>OUR VALUES</h2>
-            <p>Think Big. Act Bigger</p>
+            <p class="pt-3">Think Big. Act Bigger</p>
         </div>
 
         <div class="call-icon">
             <div class="container">
                 <div class="row">
-                    <div class="col-3 call-text">
-                        <i class="fa-solid fa-droplet"></i>
-                        <h3>clean water</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quod nemo recusandae
-                            voluptatibus alias id autem ut aspernatur natus iusto explicabo nam obcaecati, veniam sunt est
-                            voluptate harum? Sequi, suscipit.</p>
-                        <button class="btn" type="button">Learn More</button>
-                    </div>
-                    <div class="col-3 call-text">
-                        <i class="fa-solid fa-stethoscope"></i>
-                        <h3>clean water</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quod nemo recusandae
-                            voluptatibus alias id autem ut aspernatur natus iusto explicabo nam obcaecati, veniam sunt est
-                            voluptate harum? Sequi, suscipit.</p>
-                        <button class="btn" type="button">Learn More</button>
-                    </div>
-                    <div class="col-3 call-text">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <h3>clean water</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quod nemo recusandae
-                            voluptatibus alias id autem ut aspernatur natus iusto explicabo nam obcaecati, veniam sunt est
-                            voluptate harum? Sequi, suscipit.</p>
-                        <button class="btn" type="button">Learn More</button>
-                    </div>
-                    <div class="col-3 call-text">
-                        <i class="fa-solid fa-droplet"></i>
-                        <h3>clean water</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quod nemo recusandae
-                            voluptatibus alias id autem ut aspernatur natus iusto explicabo nam obcaecati, veniam sunt est
-                            voluptate harum? Sequi, suscipit.</p>
-                        <button class="btn" type="button">Learn More</button>
-                    </div>
+                    <article class="col-3 call-text" v-for="item in store.articleArr" :key="item">
+                        <div class="icon" :style="{ color: item.color }">
+                            <img :src="`src/assets/svg-icon/${item.image}`">
+                        </div>
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                    </article>
                 </div>
             </div>
         </div>
     </div>
     <div class="container-fluid recent-causes">
         <div class="recent-title">
-            <h2 class="border-bottom">RECENT CAUSES</h2>
+            <h2>RECENT CAUSES</h2>
             <p>We run Projects in over 30 countries in 5 continents</p>
         </div>
-        <div class="container card-container">
+        <div class="container card-container" id="causes-articles">
             <div class="row call-card">
                 <div class="col-3" v-for="card in store.cards" :key="card">
                     <div class="card">
@@ -74,7 +49,7 @@ export default {
         </div>
     </div>
     <div class="container-fluid links">
-        <h2 class="link">VIEW ALL OUR CAUSES</h2>
+        <h2 class="link"> <a href="#causes-articles">VIEW ALL OUR CAUSES</a></h2>
     </div>
 </template>
 
@@ -85,7 +60,6 @@ export default {
 
 .call-container {
     padding: 2rem;
-    // margin-bottom: 2rem;
     width: 100%;
     height: 100%;
     background: url(../assets/JumboTron.jpeg) no-repeat center top;
@@ -93,58 +67,102 @@ export default {
     padding-bottom: 4rem;
 
     .call-title {
+        // width: 400px;
         color: white;
         padding: 2rem;
 
-        @include noFlex(center, center, center)
+        @include noFlex(center, center, center);
+
+        h2 {
+            font-size: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2:after {
+            content: ' ';
+            border: 1px solid $newThemeColor;
+            width: 20%;
+            border-radius: 4px;
+            margin: 2rem 0;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
     }
 
-    h2 {
-        border-bottom: 2px solid $newThemeColor;
-
+    img {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+        fill: $newThemeColor !important;
+        stroke: $newThemeColor !important;
     }
+}
 
-    .call-text i,
-    h3,
-    p {
-        padding-bottom: 1.5rem;
-    }
 
-    .btn {
-        color: $newThemeColor;
-        border: 1px solid #A7BED3;
-        margin: 3rem;
-        background: transparent;
-    }
+.call-text i,
+h3,
+p {
+    padding-bottom: 1.5rem;
+}
 
-    .call-icon {
-        @include flex(center, center, center)
-    }
+.btn {
+    color: $newThemeColor;
+    border: 1px solid #A7BED3;
+    margin: 3rem;
+    background: transparent;
+}
 
-    .call-icon h3,
-    p {
-        color: white;
-    }
+.call-icon {
+    @include flex(center, center, center)
+}
 
-    .fa-solid {
-        color: $newThemeColor;
-        font-size: 50px;
-    }
+.call-icon h3,
+p {
+    color: white;
 
 }
 
+
+
 .recent-causes {
-    background-color: $supportColor;
-    padding: 5rem;
+    padding: 3rem;
 
     .recent-title {
         margin: 2rem;
 
-        p {
-            color: $paragraphColor;
+        h2 {
+            font-size: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        @include noFlex(center, center, center)
+        h2:after {
+            content: ' ';
+            border: 1px solid $newThemeColor;
+            width: 20%;
+            border-radius: 4px;
+            margin: 2rem 0;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
+        p {
+            color: $paragraphColor;
+            text-align: center;
+        }
+
     }
 }
 
@@ -156,6 +174,11 @@ export default {
     background-color: $dataColor;
     color: white;
     padding: 1.5rem;
-    @include flex(center, center, center)
+    @include flex(center, center, center);
+
+    a {
+        text-decoration: none;
+        color: $supportColor;
+    }
 }
 </style>

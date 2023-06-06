@@ -27,7 +27,7 @@ export default {
             <div class="p-5 mb-4 bg-body-tertiary rounded-3">
                 <div class="container py-5">
                     <div class="footer-text">
-                        <h2 class="display-5 border-bottom">CHANGE A LIFE TODAY</h2>
+                        <h2 class="display-5">CHANGE A LIFE TODAY</h2>
                         <p>As long as poverty, injustice & inequality persist, none of us can truly rest. It doesn't take
                             much to change a life. Get in touche today anda start making the difference</p>
                     </div>
@@ -72,6 +72,27 @@ footer {
     p {
         font-size: 1.3rem;
         font-weight: lighter;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2:after {
+        content: ' ';
+        border: 1px solid $newThemeColor;
+        width: 30%;
+        border-radius: 4px;
+        margin: 2rem 0;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     }
 
 
