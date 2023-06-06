@@ -28,3 +28,4 @@ di ricevere una migliore assistenza e valutazione da parte dei vostri insegnanti
 
 COME AFFRONTARE IL LAVORO
 Affrontate il progetto a mente serena allontanando ogni ansia, divertitevi mentre mettete in pratica i concetti imparati fino ad ora, focalizzate il vero obiettivo: domani questa sarà la vostra giornata tipo.
+![Screencapture](https://github.com/MarikaDiGirolamo/proj-html-vuejs/assets/123649333/a6845ba6-8205-4994-a1c0-f356edaa4db2)
